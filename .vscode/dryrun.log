@@ -1,0 +1,5 @@
+make: Entering directory `/Users/guilhermeleonardonunes/go/src/github.com/guiln/go-daemon'
+echo "Building observer daemon"
+go build -o bin/observer app/observer.go
+make: Leaving directory `/Users/guilhermeleonardonunes/go/src/github.com/guiln/go-daemon'
+ 
