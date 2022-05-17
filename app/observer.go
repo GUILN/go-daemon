@@ -51,6 +51,8 @@ func (c *Config) init(args []string) error {
 
 func Run(ctx context.Context, c *Config, out io.Writer) error {
 	c.init(os.Args)
+	// 1 - Log to stadandard output
+	// in this case we are injecting the output writer in order to make the test easier
 	log.SetOutput(out)
 
 	for {
