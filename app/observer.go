@@ -49,8 +49,18 @@ func (c *Config) init(args []string) error {
 	return nil
 }
 
+func (c *Config) Reload() error {
+	if err := c.init(os.Args); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func Run(ctx context.Context, c *Config, out io.Writer) error {
-	c.init(os.Args)
+	if err := c.Reload(); err != nil {
+		return err
+	}
 	// 1 - Log to stadandard output
 	// in this case we are injecting the output writer in order to make the test easier
 	log.SetOutput(out)

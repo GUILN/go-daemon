@@ -6,6 +6,7 @@ This repo is designated to create a daemon in go following the article:
 ## Four steps are
 - 1 Log to standard output
 - 2 Shutdonw on SIGTERM/SIGINT
+- 3 Reload the config on SIGHUP
 
 In the code you can find comments that indicates which the parts that are implementing those four steps.
 
