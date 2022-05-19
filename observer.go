@@ -21,28 +21,38 @@ func main() {
 	// sinalChan and go routine below are used to gracefully shutdown the daemon in case
 	// of signals: SIGTERM, SIGINT
 	signalChan := make(chan os.Signal, 1)
-	signal.Notify(signalChan, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
+	signal.Notify(signalChan, syscall.SIGINT, syscall.SIGTERM, os.Interrupt, syscall.SIGHUP)
 
 	go func() {
-		select {
-		case s := <-signalChan:
-			switch s {
-			case syscall.SIGINT, syscall.SIGTERM:
-				log.Printf("Got SIGINT/SIGTERM, exiting...")
-				cancel()
+		for {
+			select {
+			case s := <-signalChan:
+				switch s {
+				case syscall.SIGINT, syscall.SIGTERM:
+					log.Printf("Got SIGINT/SIGTERM, exiting...")
+					cancel()
+					os.Exit(1)
+				case os.Interrupt:
+					log.Printf("Got Interrupt, exiting...")
+					cancel()
+					os.Exit(1)
+				case syscall.SIGHUP:
+					log.Printf("Got SIGHUP, reloading...")
+					if err := c.Reload(); err != nil {
+						fmt.Fprintf(os.Stderr, "%s\n", err)
+					}
+				}
+			case <-ctx.Done():
+				log.Printf("Done")
 				os.Exit(1)
-			case syscall.SIGHUP:
-				log.Printf("Got SIGHUP, reloading...")
-				c.Reload()
 			}
-		case <-ctx.Done():
-			log.Printf("Done")
-			os.Exit(1)
+
 		}
 	}()
 
 	defer func() {
 		signal.Stop(signalChan)
+		close(signalChan)
 		cancel()
 	}()
 
