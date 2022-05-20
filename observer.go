@@ -32,19 +32,25 @@ func main() {
 					log.Printf("Got SIGINT/SIGTERM, exiting...")
 					cancel()
 					os.Exit(1)
+					return
 				case os.Interrupt:
 					log.Printf("Got Interrupt, exiting...")
 					cancel()
 					os.Exit(1)
+					return
 				case syscall.SIGHUP:
 					log.Printf("Got SIGHUP, reloading...")
 					if err := c.Reload(); err != nil {
 						fmt.Fprintf(os.Stderr, "%s\n", err)
+						cancel()
+						os.Exit(1)
+						return
 					}
 				}
 			case <-ctx.Done():
 				log.Printf("Done")
 				os.Exit(1)
+				return
 			}
 
 		}
