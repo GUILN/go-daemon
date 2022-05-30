@@ -7,10 +7,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `all'.  Stop.
 
-
-# Make data base, printed on Thu May 19 14:20:04 2022
+# Make data base, printed on Sun May 29 22:30:55 2022
 
 # Variables
 
@@ -19,11 +17,16 @@ make: *** No rule to make target `all'.  Stop.
 # automatic
 ?F = $(notdir $?)
 # environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+LC_CTYPE = UTF-8
+# environment
 VSCODE_LOG_NATIVE = false
 # environment
 NVM_INC = /Users/guilhermeleonardonunes/.nvm/versions/node/v18.1.0/include/node
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+ 
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # automatic
@@ -37,7 +40,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/bin/make
 # environment
-STARSHIP_SESSION_KEY = 2139414716115282
+STARSHIP_SESSION_KEY = 2908023065914415
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -47,13 +50,13 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 INFOPATH = /opt/homebrew/share/info:
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /var/folders/r2/8046088d6gb009xxzt_ggdch0000gn/T/vscode-ipc-983faaed-5ed8-4a0d-9fb9-57ac29a858e9.sock
+VSCODE_IPC_HOOK_EXTHOST = /var/folders/r2/8046088d6gb009xxzt_ggdch0000gn/T/vscode-ipc-1e619e68-2c15-4ea5-9c8f-db5f4f8f1986.sock
 # environment
-VSCODE_CWD = /
+VSCODE_CWD = /Users/guilhermeleonardonunes/Learning/Rust/server
 # environment
 GOPROXY = https://proxy.golang.org,direct
 # environment
-PATH = /Users/guilhermeleonardonunes/go/bin:/Users/guilhermeleonardonunes/.nvm/versions/node/v18.1.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PATH = /Users/guilhermeleonardonunes/go/bin:/Users/guilhermeleonardonunes/.nvm/versions/node/v18.1.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/guilhermeleonardonunes/.cargo/bin
 # makefile (from `Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
@@ -61,13 +64,15 @@ GOPATH = /Users/guilhermeleonardonunes/go
 # environment
 NVM_BIN = /Users/guilhermeleonardonunes/.nvm/versions/node/v18.1.0/bin
 # environment
+LaunchInstanceID = BCCD3ADE-27BD-4D49-908C-F9B4921B033A
+# environment
 VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.0Cnnpcg7Zo/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.bbOuWCNzm4/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -87,7 +92,9 @@ HOME = /Users/guilhermeleonardonunes
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/guilhermeleonardonunes/Library/Application Support/Code/CachedData/da15b6fd3ef856477bf6f4fb29ba1b7af717770d
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /Users/guilhermeleonardonunes/Library/Application Support/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
 LOGNAME = guilhermeleonardonunes
 # environment
@@ -100,22 +107,30 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
+# environment
+COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
 # environment
-SHLVL = 1
+LC_TERMINAL = iTerm2
+# environment
+SHLVL = 3
 # default
 MAKE_VERSION := 3.81
 # environment
 USER = guilhermeleonardonunes
 # makefile
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := all
+# default
+MAKECMDGOALS := all
+# environment
+TERM_SESSION_ID = w0t0p0:AA3AF80A-6451-4535-9C7C-93216EBEE4A5
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := /Library/Developer/CommandLineTools/usr/bin/make
+# environment
+TERM_PROGRAM = iTerm.app
 # default
 .VARIABLES := 
 # environment
@@ -123,7 +138,7 @@ TMPDIR = /var/folders/r2/8046088d6gb009xxzt_ggdch0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/guilhermeleonardonunes/Library/Application Support/Code/1.67.1-main.sock
+VSCODE_IPC_HOOK = /Users/guilhermeleonardonunes/Library/Application Support/Code/1.67.2-main.sock
 # makefile
 MAKEFLAGS = Rrqp
 # environment
@@ -131,9 +146,13 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
+TERM_PROGRAM_VERSION = 3.4.15
+# environment
 NVM_DIR = /Users/guilhermeleonardonunes/.nvm
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.624709.624715
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.624709.624715.ECAB3D7C-C91B-487E-9F06-952B66C5166E
+# environment
+LC_TERMINAL_VERSION = 3.4.15
 # environment
 HOMEBREW_PREFIX = /opt/homebrew
 # automatic
@@ -141,7 +160,11 @@ HOMEBREW_PREFIX = /opt/homebrew
 # automatic
 +F = $(notdir $+)
 # environment
+ITERM_SESSION_ID = w0t0p0:AA3AF80A-6451-4535-9C7C-93216EBEE4A5
+# environment
 HOMEBREW_REPOSITORY = /opt/homebrew
+# environment
+COLORFGBG = 15;0
 # environment
 __CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x0
 # environment
@@ -151,7 +174,11 @@ MAKEFILES :=
 # automatic
 <F = $(notdir $<)
 # environment
+ITERM_PROFILE = Default
+# environment
 LC_ALL = C
+# environment
+SECURITYSESSIONID = 186b6
 # automatic
 ^F = $(notdir $^)
 # default
@@ -163,11 +190,13 @@ CLICOLOR = 1
 # environment
 LANG = C
 # environment
-VSCODE_PID = 46053
+TERM = xterm-256color
+# environment
+VSCODE_PID = 2827
 # environment
 STARSHIP_SHELL = zsh
 # variable set hash-table stats:
-# Load=76/1024=7%, Rehash=0, Collisions=5/99=5%
+# Load=91/1024=9%, Rehash=0, Collisions=8/116=7%
 
 # Pattern-specific Variable Values
 
@@ -175,9 +204,9 @@ STARSHIP_SHELL = zsh
 
 # Directories
 
-# . (device 16777233, inode 751778): 11 files, no impossibilities.
+# . (device 16777231, inode 751778): 13 files, no impossibilities.
 
-# 11 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -185,14 +214,19 @@ STARSHIP_SHELL = zsh
 
 # Files
 
-# Not a target:
-all:
+all: build build_installer copy_config
 #  Command-line target.
-#  Implicit rule search has been done.
+#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Needs to be updated (-q is set).
 # variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+# Load=0/32=0%, Rehash=0, Collisions=0/2=0%
+#  commands to execute (from `Makefile', line 2):
+	@echo "all good to proceed!"
+	@echo "in order to continue the installation of the daemon access bin folder and run the install_observer program"
+	exit 0
+	
 
 # Not a target:
 .SUFFIXES:
@@ -203,7 +237,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-17 13:25:49
+#  Last modified 2022-05-22 22:15:34
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -211,12 +245,42 @@ Makefile:
 
 build:
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  commands to execute (from `Makefile', line 3):
+#  Implicit/static pattern stem: `'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := build
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := 
+# automatic
+# | := 
+# automatic
+# < := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/10=10%
+#  commands to execute (from `Makefile', line 6):
 	@echo "Building observer daemon"
 	go build -o bin/observer observer.go
 	@echo "Just built observer daemon!"
+	
+
+build_installer:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 11):
+	@echo "Building observer's installer"
+	go build -o bin/install_observer installer/installer.go
+	@echo "Just built observer's installer"
 	
 
 # Not a target:
@@ -225,18 +289,28 @@ build:
 #  Modification time never checked.
 #  File has not been updated.
 
+copy_config:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  commands to execute (from `Makefile', line 16):
+	@echo "Copying config file"
+	cp config.conf bin/observer.conf
+	@echo "Just copied config file"
+	
+
 install:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  commands to execute (from `Makefile', line 8):
+#  commands to execute (from `Makefile', line 21):
 	@echo "Installing observer daemon"
 	go install observer.go
 	@echo "Just installed observer daemon!"
 	
 
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/18=0%
+# Load=8/1024=1%, Rehash=0, Collisions=0/25=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -248,6 +322,6 @@ install:
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Thu May 19 14:20:04 2022
+# Finished Make data base on Sun May 29 22:30:55 2022
 
  

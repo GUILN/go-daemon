@@ -11,5 +11,3 @@ Daemon's installer was created following this other article: [Create and Manage 
 - 4 Provide necessary config file for your favorite init system to control your `daemon`
 
 In the code you can find comments that indicates which the parts that are implementing those four steps.
-
-
